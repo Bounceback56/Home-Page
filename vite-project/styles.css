@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.header-parent-container{
+    background: #131921;
+}
+.logo-container{
+    width: 20%;
+}
+.search-container{
+    width: 50%;
+}
+.menu-container{
+    width: 30%;
+}
+#search{
+    width: 100%;
+    border: 1px solid black;
+    border-radius:20px;
+}
+.list li{
+    margin-right: 2em;
+    color: white;
+    cursor: pointer;
+}
+@media only screen and (max-width:650px){
+    .header-parent-container{
+        flex-direction: column;
+    }
+    .hamburger{
+        display: block;
+    }
+    .logo-container{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .search-container{
+        width: 100%;
+    }
+    .list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .list li{
+        padding: 0.5em;
+    }
+}
