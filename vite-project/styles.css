@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+#root{
+    height: 100vh;
+    position: relative;
+}
 .header-parent-container{
     background: #131921;
 }
@@ -10,7 +14,7 @@
 .search-container{
     width: 50%;
 }
-.menu-container{
+.menu-outer-container{
     width: 30%;
 }
 #search{
@@ -19,9 +23,16 @@
     border-radius:20px;
 }
 .list li{
-    margin-right: 2em;
+    padding-left: 5em;
     color: white;
     cursor: pointer;
+}
+.child-body-container{
+    width: 80%;
+    row-gap: 2em;
+}
+.parent-body-container{
+    padding: 1em 0px 0px 2em;
 }
 @media only screen and (max-width:650px){
     .header-parent-container{
@@ -44,5 +55,12 @@
     }
     .list li{
         padding: 0.5em;
+    }
+    .menu-outer-container{
+        height: auto;
+        width: 100%;
+    }
+    .product-parent-container{
+        margin-top: 2em;
     }
 }
