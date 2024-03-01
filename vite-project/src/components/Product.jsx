@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 function Product({name,price,image,sizes}){
     return (
-      <div className="product-parent-container flex flex-col h-auto w-72 bg-white rounded-lg shadow-md border border-gray-300 p-4">
+      <div className="product-parent-container flex flex-col h-auto w-72 bg-white rounded-lg shadow-md border border-gray-300 p-4 hover:shadow-lg transition duration-300 ease-in-out">
         <img
           className="object-cover w-full h-60"
           src={image}

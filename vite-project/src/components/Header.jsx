@@ -2,9 +2,19 @@
 import { useState } from "react";
 import Logo from "../assets/images/amazon.svg";
 import Hamburger from "../assets/images/hamburger.svg";
-function Header({searchText,handleChange}){
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setSearchText } from "../utils/textSlice";
+
+function Header(){
     const [ismenuopen,setismenuopen]=useState(true);
-    
+    const searchText=useSelector((store)=>store.text.searchText)
+    const dispatch=useDispatch();
+
+    const handleChange=(e)=>{
+        dispatch(setSearchText(e.target.value));
+    }
+
     return (
       <div className="header-parent-container flex  p-4">
         <div className="logo-container flex">
@@ -28,9 +38,9 @@ function Header({searchText,handleChange}){
         <div className={`menu-outer-container ${ismenuopen ? 'block' : 'hidden'} md:flex justify-center mr-4`}>
         <div className="menu-inner-container">
           <ul className="list flex justify-evenly">
-            <li><strong>About</strong></li>
-            <li><strong>Contact</strong></li>
-            <li><strong>Cart</strong></li>
+            <li><Link to="/about" className=" hover:text-gray-300"><strong>About</strong></Link></li>
+            <li><Link to="/contact" className=" hover:text-gray-300"><strong>Contact</strong></Link></li>
+            <li><Link to="/cart" className=" hover:text-gray-300"><strong>Cart</strong></Link></li>
           </ul>
         </div>
         </div>
